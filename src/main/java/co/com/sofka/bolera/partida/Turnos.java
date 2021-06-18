@@ -6,6 +6,8 @@ import co.com.sofka.bolera.partida.values.Lanzamientos;
 import co.com.sofka.bolera.partida.values.TurnoId;
 import co.com.sofka.domain.generic.Entity;
 
+import java.util.Objects;
+
 public class Turnos extends Entity<TurnoId> {
     private Puntos puntos;
     private Lanzamientos lanzamientos;
@@ -16,6 +18,14 @@ public class Turnos extends Entity<TurnoId> {
         this.puntos = puntos;
         this.lanzamientos = lanzamientos;
         this.jugadorId = jugadorId;
+    }
+
+    public void actualizarLanzamientos(Lanzamientos lanzamientos){
+        this.lanzamientos = Objects.requireNonNull(lanzamientos);
+    }
+
+    public void actualizarPuntos(Puntos puntos){
+        this.puntos = Objects.requireNonNull(puntos);
     }
 
     public Puntos getPuntos() {

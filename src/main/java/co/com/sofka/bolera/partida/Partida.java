@@ -1,10 +1,8 @@
 package co.com.sofka.bolera.partida;
 
 import co.com.sofka.bolera.generics.Puntos;
-import co.com.sofka.bolera.jugador.events.PrecioDeMembresiaActualizado;
 import co.com.sofka.bolera.jugador.values.JugadorId;
-import co.com.sofka.bolera.partida.events.ConsumoCreado;
-import co.com.sofka.bolera.partida.events.PartidaCreada;
+import co.com.sofka.bolera.partida.events.*;
 import co.com.sofka.bolera.partida.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 
@@ -49,7 +47,7 @@ public class Partida extends AggregateEvent<PartidaId> {
     }
 
     public void agregarLanzamientosDeTurno(TurnoId turnoId, Lanzamientos lanzamientos){
-        appendChange(new LanzamientosDeTurnoAgregado(turnoId, lanzamientos)).apply();
+        appendChange(new LanzamientosDeTurnoActualizado(turnoId, lanzamientos)).apply();
     }
 
     public void agregarPuntosDeTurno(TurnoId turnoId, Puntos puntos){
@@ -65,7 +63,7 @@ public class Partida extends AggregateEvent<PartidaId> {
     }
 
     public void actualizarDescuentoConsumo(ConsumoId consumoId, ValorFinal valorFinal){
-        appendChange(new DescuentolDeConsumoActualizado(consumoId, valorFinal)).apply();
+        appendChange(new DescuentoDeConsumoActualizado(consumoId, valorFinal)).apply();
     }
 
     public void agregarPuntosDePodio(PodioId podioId, JugadorId jugadorId, Puntos puntos){
@@ -74,5 +72,25 @@ public class Partida extends AggregateEvent<PartidaId> {
 
     public void agregarPuestoDePodio(PodioId podioId, Puesto puesto){
         appendChange(new PuestosDePodioAgregado(podioId, puesto)).apply();
+    }
+
+    public Capacidad capacidad() {
+        return capacidad;
+    }
+
+    public List<Turnos> turno() {
+        return turno;
+    }
+
+    public Podio podio() {
+        return podio;
+    }
+
+    public Consumo consumo() {
+        return consumo;
+    }
+
+    public Set<JugadorId> jugadorId() {
+        return jugadorId;
     }
 }

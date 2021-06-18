@@ -22,7 +22,7 @@ public class Racha implements ValueObject<Integer> {
 
     @Override
     public Integer value() {
-        return null;
+        return value;
     }
 
     @Override

@@ -4,7 +4,7 @@ import co.com.sofka.bolera.partida.Consumo;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class ConsumoCreado extends DomainEvent {
-    private Consumo consumo;
+    private final Consumo consumo;
 
     public ConsumoCreado(Consumo consumo) {
         super("sofka.partida.consumocreado");
@@ -14,4 +14,5 @@ public class ConsumoCreado extends DomainEvent {
     public Consumo getConsumo() {
         return consumo;
     }
+
 }

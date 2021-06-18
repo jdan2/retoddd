@@ -21,6 +21,7 @@ public class Membresia extends Entity<MembresiaId> {
         this.jugadorId = jugadorId;
     }
 
+
     public void actualizarPrecio(Precio precio){
         this.precio = Objects.requireNonNull(precio);
     }

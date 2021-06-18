@@ -3,6 +3,7 @@ package co.com.sofka.bolera.jugador;
 import co.com.sofka.bolera.jugador.events.*;
 import co.com.sofka.domain.generic.EventChange;
 
+import java.util.List;
 
 
 public class JugadorChange extends EventChange {
@@ -32,12 +33,12 @@ public class JugadorChange extends EventChange {
                 ));
 
         apply((EquipamientoAgregado event)->{
-            jugador.equipamientos.add( new Equipamiento(
+            jugador.equipamientos = (List<Equipamiento>) new Equipamiento(
                     event.getEntityId(),
                     event.getTipo(),
                     event.getDescripcion(),
                     event.getJugadorId()
-                    ));
+                    );
         });
 
         apply((TipoDeEquipamientoActualizado event)->{

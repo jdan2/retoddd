@@ -5,12 +5,8 @@ Xsrc/main/java/co/com/sofka/bolera/jugador/events/MayorPuntajeDeHistorialActuali
 Zsrc/main/java/co/com/sofka/bolera/jugador/events/DescripcionDeEquipamientoActualizado.java,2/6/261c1007570464c80b1f419d1ac0155b9bf00748
 u
 Esrc/main/java/co/com/sofka/bolera/jugador/events/MembresiaCreada.java,d/d/dd2c87257e303087828cfaf02f0e449ba763d864
-z
-Jsrc/main/java/co/com/sofka/bolera/jugador/events/EquipamientoAgregado.java,4/e/4ecf957cfc74fe51852c6fc4b2dd89263eddd878
 É
 Ssrc/main/java/co/com/sofka/bolera/jugador/events/TipoDeEquipamientoActualizado.java,5/d/5daea83ca70815c1a289b87bd738c7aac8b56b71
-{
-Ksrc/main/java/co/com/sofka/bolera/jugador/commands/AgregarEquipamiento.java,2/8/287d244a00e1c8c6124ac174a949919aa8b10f3a
 v
 Fsrc/main/java/co/com/sofka/bolera/jugador/commands/CrearHistorial.java,9/0/90281ee92296f4189270c423312db8543660ac55
 Ñ
@@ -41,8 +37,6 @@ Csrc/main/java/co/com/sofka/bolera/jugador/events/JugadorCreado.java,f/8/f824bb
 Psrc/main/java/co/com/sofka/bolera/jugador/events/TipoDeMembresiaActualizado.java,e/a/ea864fff62154d0d72c7b9284edb14a875910d88
 {
 Ksrc/main/java/co/com/sofka/bolera/partida/events/PuntosDeTurnoAgregado.java,f/7/f7a60bf2d0c401ddd4660164f49a10c4387c97b1
-Å
-Qsrc/main/java/co/com/sofka/bolera/jugador/events/RachaDeHistorialActualizada.java,8/7/87986dbf73cea8bada7a856aad537ebdefceb20b
 
 Osrc/main/java/co/com/sofka/bolera/partida/events/ValorDeConsumoActualizado.java,d/1/d1efdbacbbaa8da2c890b74260e2935f28d32d92
 u
@@ -67,8 +61,6 @@ q
 Asrc/main/java/co/com/sofka/bolera/partida/events/PodioCreado.java,b/3/b361a4bdcdc57c135205bffe8d1dfcf60551509c
 {
 Ksrc/main/java/co/com/sofka/bolera/partida/events/PuntosDePodioAgregado.java,4/f/4fe5acae829c7d7a26b5700baf5ca354d45475c1
-l
-<src/main/java/co/com/sofka/bolera/jugador/JugadorChange.java,b/4/b40543dd3ce86e36f664c1d2e9bdd0f1250a65ce
 e
 5src/main/java/co/com/sofka/bolera/partida/Turnos.java,d/2/d2e9c04017c0ed1b546a6e4645ee39b7050e1a76
 Ñ

@@ -4,21 +4,21 @@ import co.com.sofka.bolera.partida.values.Capacidad;
 import co.com.sofka.bolera.partida.values.PartidaId;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class PartidaCreada extends DomainEvent {
+public class CapacidadDePartidaActualizada extends DomainEvent {
     private final PartidaId partidaId;
     private final Capacidad capacidad;
 
-    public PartidaCreada(PartidaId partidaId, Capacidad capacidad) {
-        super("sofka.partida.partidacreada");
+    public CapacidadDePartidaActualizada(PartidaId partidaId, Capacidad capacidad) {
+        super("sofka.partida.capacidaddepartidaactualizada");
         this.partidaId = partidaId;
         this.capacidad = capacidad;
     }
 
-    public Capacidad getCapacidad() {
-        return capacidad;
-    }
-
     public PartidaId getPartidaId() {
         return partidaId;
+    }
+
+    public Capacidad getCapacidad() {
+        return capacidad;
     }
 }

@@ -44,10 +44,12 @@ public class Jugador extends AggregateEvent<JugadorId> {
     }
 
     public void crearHistorial(Historial historial){
+        Objects.requireNonNull(historial);
         appendChange(new HistorialCreado(historial)).apply();
     }
 
     public void crearMembresia(Membresia membresia){
+        Objects.requireNonNull(membresia);
         appendChange(new MembresiaCreada(membresia)).apply();
     }
 
@@ -70,22 +72,32 @@ public class Jugador extends AggregateEvent<JugadorId> {
     }
 
     public void actualizarDescripcionDeEquipamiento(EquipamientoId entityId, Descripcion descripcion){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(descripcion);
         appendChange(new DescripcionDeEquipamientoActualizado(entityId, descripcion)).apply();
     }
 
     public void actualizarRachaDeHitorial(HistorialId entityId, Racha racha){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(racha);
         appendChange(new RachaDeHistorialActualizada(entityId, racha)).apply();
     }
 
     public void actualizarMayorPuntajeDeHitorial(HistorialId entityId, MayorPuntaje mayorPuntaje){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(mayorPuntaje);
         appendChange(new MayorPuntajeDeHistorialActualizado(entityId, mayorPuntaje)).apply();
     }
 
     public void actualizarTipoDeMembresia(MembresiaId entityId, Tipo tipo){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(tipo);
         appendChange(new TipoDeMembresiaActualizado(entityId, tipo)).apply();
     }
 
     public void actualizarPrecioDeMembresia(MembresiaId entityId, Precio precio){
+        Objects.requireNonNull(entityId);
+        Objects.requireNonNull(precio);
         appendChange(new PrecioDeMembresiaActualizado(entityId, precio)).apply();
     }
 

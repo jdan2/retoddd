@@ -14,6 +14,7 @@ public class ActualizarPrecioDeMembresiaUseCase extends UseCase<RequestCommand<A
         var command = actualizarPrecioDeMembresiaRequestCommand.getCommand();
         var jugador =  Jugador.from(command.getJugadorId(), retrieveEvents() );
 
+
         jugador.actualizarPrecioDeMembresia(command.getEntityId(), command.getPrecio());
         emit().onResponse(new ResponseEvents(jugador.getUncommittedChanges()));
 

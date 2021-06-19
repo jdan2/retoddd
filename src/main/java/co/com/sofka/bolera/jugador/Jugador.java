@@ -1,11 +1,13 @@
 package co.com.sofka.bolera.jugador;
 
 import co.com.sofka.bolera.generics.Tipo;
+import co.com.sofka.bolera.jugador.commands.ActualizarNombreDeJugador;
 import co.com.sofka.bolera.jugador.events.*;
 import co.com.sofka.bolera.jugador.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,12 +17,12 @@ public class Jugador extends AggregateEvent<JugadorId> {
     protected Nombre nombre;
     protected Email email;
     protected Historial historial;
-    protected List<Equipamiento> equipamientos;
+    protected Equipamiento equipamientos;
     protected Membresia membresia;
 
     public Jugador(JugadorId entityId, Nombre nombre, Email email) {
         super(entityId);
-        appendChange(new JugadorCreado(nombre, email)).apply();
+        appendChange(new JugadorCreado(entityId, nombre, email)).apply();
     }
 
     private Jugador(JugadorId entityId){
@@ -50,7 +52,15 @@ public class Jugador extends AggregateEvent<JugadorId> {
     }
 
     public void actualizarTipoDeEquipamiento(EquipamientoId entityId, Tipo tipo){
+        Objects.requireNonNull(tipo);
+        Objects.requireNonNull(entityId);
         appendChange(new TipoDeEquipamientoActualizado(entityId, tipo)).apply();
+    }
+
+    public void actualizarNombreDeJugador(JugadorId jugadorId, Nombre nombre){
+        Objects.requireNonNull(nombre);
+        Objects.requireNonNull(jugadorId);
+        appendChange(new NombreDeJugadorActualizado(jugadorId, nombre)).apply();
     }
 
     public void actualizarDescripcionDeEquipamiento(EquipamientoId entityId, Descripcion descripcion){
@@ -73,12 +83,7 @@ public class Jugador extends AggregateEvent<JugadorId> {
         appendChange(new PrecioDeMembresiaActualizado(entityId, precio)).apply();
     }
 
-    protected Optional<Equipamiento> getEquipamientoPorId(EquipamientoId entityId){
-        return equipamientos()
-                .stream()
-                .filter(equipamiento -> equipamiento.identity().equals(entityId))
-                .findFirst();
-    }
+
 
 
 
@@ -94,7 +99,7 @@ public class Jugador extends AggregateEvent<JugadorId> {
         return historial;
     }
 
-    public List<Equipamiento> equipamientos() {
+    public Equipamiento equipamientos() {
         return equipamientos;
     }
 

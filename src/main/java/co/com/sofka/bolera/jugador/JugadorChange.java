@@ -33,7 +33,7 @@ public class JugadorChange extends EventChange {
                 ));
 
         apply((EquipamientoAgregado event)->{
-            jugador.equipamientos = (List<Equipamiento>) new Equipamiento(
+            jugador.equipamientos =  new Equipamiento(
                     event.getEntityId(),
                     event.getTipo(),
                     event.getDescripcion(),
@@ -42,19 +42,19 @@ public class JugadorChange extends EventChange {
         });
 
         apply((TipoDeEquipamientoActualizado event)->{
-            var equipamiento = jugador.getEquipamientoPorId(event.getEntityId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra el equipamiento"));
-            equipamiento.actualizarTipo(event.getTipo());
+            jugador.equipamientos.actualizarTipo(event.getTipo());
         });
 
         apply((DescripcionDeEquipamientoActualizado event)->{
-            var equipamiento = jugador.getEquipamientoPorId(event.getEntityId())
-                    .orElseThrow(() -> new IllegalArgumentException("No se encuentra el equipamiento"));
-            equipamiento.actualizarDescripcion(event.getDescripcion());
+            jugador.equipamientos.actualizarDescripcion(event.getDescripcion());
         });
 
         apply((PrecioDeMembresiaActualizado event) ->{
             jugador.membresia.actualizarPrecio(event.getPrecio());
+        });
+
+        apply((NombreDeJugadorActualizado event )->{
+            jugador.nombre = event.getNombre();
         });
 
         apply((TipoDeMembresiaActualizado event) ->{

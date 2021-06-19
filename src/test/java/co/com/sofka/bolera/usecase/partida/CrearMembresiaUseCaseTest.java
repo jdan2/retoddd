@@ -47,7 +47,7 @@ public class CrearMembresiaUseCaseTest {
                 .syncExecutor(crearMembresiaUseCase, new RequestCommand<>(command))
                 .orElseThrow();
 
-        System.out.println(response);
+
 
         var events = response.getDomainEvents();
 

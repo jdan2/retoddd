@@ -45,6 +45,7 @@ public class JugadorChange extends EventChange {
             jugador.equipamientos.actualizarTipo(event.getTipo());
         });
 
+
         apply((DescripcionDeEquipamientoActualizado event)->{
             jugador.equipamientos.actualizarDescripcion(event.getDescripcion());
         });
@@ -55,6 +56,10 @@ public class JugadorChange extends EventChange {
 
         apply((NombreDeJugadorActualizado event )->{
             jugador.nombre = event.getNombre();
+        });
+
+        apply((EmailDeJugadorActualizado event )->{
+            jugador.email = event.getEmail();
         });
 
         apply((TipoDeMembresiaActualizado event) ->{

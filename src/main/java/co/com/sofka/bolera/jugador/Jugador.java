@@ -63,6 +63,12 @@ public class Jugador extends AggregateEvent<JugadorId> {
         appendChange(new NombreDeJugadorActualizado(jugadorId, nombre)).apply();
     }
 
+    public void actualizarEmailDeJugador(JugadorId jugadorId, Email email){
+        Objects.requireNonNull(email);
+        Objects.requireNonNull(jugadorId);
+        appendChange(new EmailDeJugadorActualizado(jugadorId, email)).apply();
+    }
+
     public void actualizarDescripcionDeEquipamiento(EquipamientoId entityId, Descripcion descripcion){
         appendChange(new DescripcionDeEquipamientoActualizado(entityId, descripcion)).apply();
     }

@@ -1,6 +1,4 @@
 
-ˆ
-Xsrc/main/java/co/com/sofka/bolera/jugador/events/MayorPuntajeDeHistorialActualizado.java,e/a/ea49b8b6343ff028823d9478e0fd2515a50bc3f5
 Š
 Zsrc/main/java/co/com/sofka/bolera/jugador/events/DescripcionDeEquipamientoActualizado.java,2/6/261c1007570464c80b1f419d1ac0155b9bf00748
 v
